@@ -1,9 +1,10 @@
 package tzcxsj
 
 import (
-	"github.com/stretchr/testify/require"
 	"grokkingalgorithms/tools"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 /**
@@ -13,9 +14,9 @@ n 只蚂蚁以每秒 1cm 的速度在长为 Lcm 的竿子上爬行。当蚂蚁�
 的最短时间和最长时间。
 
 限制条件
- 1 ≤ L ≤ 106
- 1 ≤ n ≤ 106
- 0 ≤ xi ≤ L
+ 1 ≤ L ≤ 106
+ 1 ≤ n ≤ 106
+ 0 ≤ xi ≤ L
 */
 
 func TestAlg162(t *testing.T) {
@@ -26,9 +27,9 @@ func TestAlg162(t *testing.T) {
 	min := 0
 	max := 0
 
-	for v := range x {
-		min = tools.MaxInt(min, tools.MinInt(v, L - v))
-		max = tools.MaxInt(max, tools.MaxInt(v, L - v))
+	for _, v := range x {
+		min = tools.MaxInt(min, tools.MinInt(v, L-v))
+		max = tools.MaxInt(max, tools.MaxInt(v, L-v))
 	}
 
 	require.Equal(t, 4, min)
